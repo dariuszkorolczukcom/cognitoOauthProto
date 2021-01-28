@@ -62,7 +62,7 @@ function Child(props) {
     params.append('grant_type', 'authorization_code')
     params.append('client_id', process.env.REACT_APP_OAUTH_CLIENT_ID)
     params.append('code', props.code)
-    params.append('redirect_uri', "http://localhost:3000/login")
+    params.append('redirect_uri', process.env.REACT_APP_LOGIN_URL)
     const url = process.env.REACT_APP_OAUTH_URL+'/oauth2/token'
 
     axios.post(url, params, config)
@@ -92,7 +92,8 @@ function Child(props) {
         <a href={process.env.REACT_APP_OAUTH_URL +
           "/logout?client_id=" +
           process.env.REACT_APP_OAUTH_CLIENT_ID + 
-          "&logout_uri=http://localhost:3000/login"}>
+          "&logout_uri=" + 
+          process.env.REACT_APP_LOGIN_URL}>
           logout
         </a>
         </>
@@ -102,7 +103,8 @@ function Child(props) {
           <a href={process.env.REACT_APP_OAUTH_URL +
             "/login?response_type=code&client_id=" +
             process.env.REACT_APP_OAUTH_CLIENT_ID +
-            "&redirect_uri=http://localhost:3000/login"}>
+            "&redirect_uri=" + 
+            process.env.REACT_APP_LOGIN_URL}>
           you must login
           </a>
         </>
