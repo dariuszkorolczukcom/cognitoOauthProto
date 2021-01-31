@@ -61,7 +61,9 @@ function LoginApp() {
   useEffect(() => {
     setCode(query.get("code"));
     var cookieToken = localStorage.getItem("token");
-    if (cookieToken != "") {
+    console.log(cookieToken)
+    if (cookieToken != null && cookieToken != "") {
+      console.log(cookieToken)
       setToken(cookieToken);
       setUserData(jwt_decode(cookieToken));
     } else {
@@ -111,44 +113,6 @@ function LoginApp() {
         <Grid item xs={3}></Grid>
         <Grid item xs={6}>
           <Paper className={classes.paperLeftAlign}>
-            <h1>Cognito Oauth Prototype</h1>
-            <hr />
-            <h3>On First Login</h3>
-            <p>
-              Logging in using existing credentials will triger user creation,
-              and copy some essential values to use in the Cognito JWT claims.
-            </p>
-            <h3>Flow</h3>
-            <ol>
-              <li>
-                Login button on react app takes you to cognito login screen
-              </li>
-              <li>
-                After successfull user authentication user is redirected back to
-                the react app with code used to receive the JWT.
-              </li>
-              <li>
-                The code is sent to the Cognito Authorization endpoint and
-                returns the JWT.
-              </li>
-              <li>
-                The JWT is saved to local storage and processed by jwt_decode to
-                view claims
-              </li>
-              <li>
-                After refreshing the screen the token will be loaded from
-                localStorage
-              </li>
-              <li>
-                Logout button clears token from localStorage and takes user to
-                Cognito logout endpoint
-              </li>
-              <li>
-                User is redirected by the Cognito logout endpoint back to react
-                app
-              </li>
-            </ol>
-            <br />
             <Button
               variant="contained"
               color="primary"
@@ -185,7 +149,7 @@ function LoginApp() {
           <>
             <Grid item xs={3}></Grid>
             <Grid item xs={6}>
-              <Paper className={classes.paper}>
+              {/* <Paper className={classes.paper}>
                 <code>Authorization Code for AWS Cognito</code>
                 <hr />
                 {code}
@@ -194,7 +158,7 @@ function LoginApp() {
                 <code>JWT from AWS Cognito</code>
                 <hr />
                 {token}
-              </Paper>
+              </Paper> */}
             </Grid>
             <Grid item xs={3}></Grid>
             <Grid item xs={3}></Grid>
