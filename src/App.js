@@ -61,7 +61,7 @@ function LoginApp() {
   useEffect(() => {
     setCode(query.get("code"));
     var cookieToken = localStorage.getItem("token");
-    if (cookieToken != "") {
+    if (cookieToken != "" && cookieToken != null) {
       setToken(cookieToken);
       setUserData(jwt_decode(cookieToken));
     } else {
