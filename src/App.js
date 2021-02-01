@@ -108,8 +108,8 @@ function LoginApp() {
   return (
     <div className={classes.root}>
       <Grid container spacing={3}>
-        <Grid item xs={3}></Grid>
-        <Grid item xs={6}>
+        <Grid item xs={0} sm={3}></Grid>
+        <Grid item xs={12} sm={6}>
           <Paper className={classes.paperLeftAlign}>
             <h1>Cognito Oauth Prototype</h1>
             <hr />
@@ -180,11 +180,11 @@ function LoginApp() {
             </Button>
           </Paper>
         </Grid>
-        <Grid item xs={3}></Grid>
+        <Grid item xs={0} sm={3}></Grid>
         {
           <>
-            <Grid item xs={3}></Grid>
-            <Grid item xs={6}>
+            <Grid item xs={0} sm={3}></Grid>
+            <Grid item xs={12} sm={6}>
               <Paper className={classes.paper}>
                 <code>Authorization Code for AWS Cognito</code>
                 <hr />
@@ -196,9 +196,9 @@ function LoginApp() {
                 {token}
               </Paper>
             </Grid>
-            <Grid item xs={3}></Grid>
-            <Grid item xs={3}></Grid>
-            <Grid item xs={6}>
+            <Grid item xs={0} sm={3}></Grid>
+            <Grid item xs={0} sm={3}></Grid>
+            <Grid item xs={12} sm={6}>
               User Data from JWT claims:
               <TableContainer component={Paper}>
                 <Table className={classes.table} aria-label="simple table">
@@ -223,7 +223,7 @@ function LoginApp() {
                 </Table>
               </TableContainer>
             </Grid>
-            <Grid item xs={3}></Grid>
+            <Grid item xs={0} sm={3}></Grid>
           </>
         }
       </Grid>
