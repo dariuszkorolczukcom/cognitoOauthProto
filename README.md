@@ -1,9 +1,13 @@
 # environment variables needed:
 
-REACT_APP_LOGIN_URL - your app login endpoint address (p.e http://localhost:3000/login)
-REACT_APP_OAUTH_CLIENT_ID - Cognito client ID
-REACT_APP_OAUTH_CLIENT_SECRET - Cognito client secret
-REACT_APP_OAUTH_URL - url of the cognito app (https://[custom].auth.eu-west-1.amazoncognito.com)
+REACT_APP_LOGIN_URL - your app login endpoint address (p.e http://localhost:3000/login).
+
+REACT_APP_OAUTH_CLIENT_ID - Cognito client ID.
+
+REACT_APP_OAUTH_CLIENT_SECRET - Cognito client secret.
+
+REACT_APP_OAUTH_URL - url of the cognito app (https://[custom].auth.eu-west-1.amazoncognito.com).
+
 
 # Getting Started with Create React App
 
